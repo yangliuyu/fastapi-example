@@ -6,7 +6,7 @@ from app.models.base import Base, long, str_short
 
 
 class Employee(Base):
-    __table__ = 'employees'
+    __tablename__ = 'employees'
     first_name: Mapped[str_short]
     last_name: Mapped[str_short]
     email: Mapped[str_short]

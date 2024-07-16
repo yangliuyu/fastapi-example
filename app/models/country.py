@@ -5,6 +5,6 @@ from app.models.region import Region
 
 
 class Country(Base):
-    __table__ = 'countries'
+    __tablename__ = 'countries'
     name: Mapped[str_short]
     region: Mapped[Region] = relationship(Region, back_populates='country')

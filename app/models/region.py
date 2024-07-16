@@ -6,7 +6,7 @@ from app.models.country import Country
 
 
 class Region(Base):
-    __table__ = 'regions'
+    __tablename__ = 'regions'
     name: Mapped[str_short] = mapped_column(index=True)
     country_id: Mapped[int] = mapped_column(ForeignKey(Country.id), use_alter=True)
     country: Mapped[Country] = relationship(Country, back_populates='region')

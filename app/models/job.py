@@ -8,14 +8,14 @@ from app.models.enums.language import Language
 
 
 class Job(Base):
-    __table__ = 'jobs'
+    __tablename__ = 'jobs'
     title: Mapped[str_short]
     min_salary: Mapped[long]
     max_salary: Mapped[long]
 
 
 class JobHistory(Base):
-    __table__ = 'job_histories'
+    __tablename__ = 'job_histories'
     start_date: Mapped[datetime.date]
     end_date: Mapped[datetime.date]
     language: Mapped[Language] = mapped_column(Enum(Language))

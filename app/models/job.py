@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from sqlalchemy import Enum
+from sqlalchemy import Enum, Date
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.models.base import Base, long, str_short
@@ -16,6 +16,6 @@ class Job(Base):
 
 class JobHistory(Base):
     __tablename__ = 'job_histories'
-    start_date: Mapped[datetime.date]
-    end_date: Mapped[datetime.date]
+    start_date: Mapped[datetime.date] = mapped_column(Date)
+    end_date: Mapped[datetime.date] = mapped_column(Date)
     language: Mapped[Language] = mapped_column(Enum(Language))

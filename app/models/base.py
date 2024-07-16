@@ -2,7 +2,7 @@ import datetime
 
 from sqlalchemy import BIGINT, JSON, String
 from sqlalchemy.orm import DeclarativeBase, Mapped, MappedAsDataclass, mapped_column
-from sqlalchemy.sql.annotation import Annotated
+from typing_extensions import Annotated
 
 int_pk = Annotated[int, mapped_column(BIGINT, init=False, primary_key=True)]
 

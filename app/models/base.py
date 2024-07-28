@@ -1,8 +1,8 @@
 import datetime
+from typing import Annotated
 
 from sqlalchemy import BIGINT, JSON, String
 from sqlalchemy.orm import DeclarativeBase, Mapped, MappedAsDataclass, mapped_column
-from typing_extensions import Annotated
 
 int_pk = Annotated[int, mapped_column(BIGINT, init=False, primary_key=True)]
 
@@ -24,6 +24,7 @@ json_data = Annotated[dict, mapped_column(JSON)]
 
 
 class Base(MappedAsDataclass, DeclarativeBase):
+    __abstract__ = True
     id: Mapped[int_pk]
     created_at: Mapped[timestamp_auto]
     created_by: Mapped[user_id]

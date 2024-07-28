@@ -6,13 +6,12 @@ from sqlalchemy import pool
 from alembic import context
 
 from app.models.base import Base
-from app.models.country import Country
-from app.models.department import Department
-from app.models.employee import Employee
-from app.models.job import Job, JobHistory
-from app.models.location import Location
-from app.models.region import Region
-from app.models.task import Task
+from app.models.country import Country  # noqa: F401
+from app.models.department import Department  # noqa: F401
+from app.models.employee import Employee  # noqa: F401
+from app.models.job import Job, JobHistory  # noqa: F401
+from app.models.location import Location  # noqa: F401
+from app.models.task import Tas  # noqa: F401
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
